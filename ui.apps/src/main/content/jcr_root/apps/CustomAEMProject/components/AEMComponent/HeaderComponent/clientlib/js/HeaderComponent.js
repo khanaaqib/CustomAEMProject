@@ -1,0 +1,1 @@
+console.log("Header component js is ready!");

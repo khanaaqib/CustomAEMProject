@@ -1,0 +1,25 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+  <sly data-sly-call="${clientlib.all @ categories='Header-Component'}">
+  </sly> 
+</sly>
+<div data-sly-use.headerValues="com.adobe.aem.custom.project.core.models.HeaderComponentModel">
+    <div class="navbar">
+        <img src="${headerValues.logoImage}" alt="Header Logo" class="logo_image">
+        <a href="${headerValues.homePageUrl}">${headerValues.homePageTitle}</a>
+        <div class="subnav">
+            <button class="subnavbtn">${headerValues.aboutUsTitle}</button>
+            <div class="subnav-content">
+                <div data-sly-list.subNavValues="${headerValues.aboutUsSubNavigation}">
+                    <a href="${subNavValues.aboutUsSubNavUrl}">${subNavValues.aboutUsSubNavTitle}</a>
+                    <div data-sly-list.subNavChildValues="${subNavValues.subNavChild}">
+                        <a href="${subNavChildValues.subNavChildUrl}">${subNavChildValues.subNavChildTitle}</a>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="subnav-right">
+            <a href="${headerValues.signupPageUrl}">${headerValues.signupPageTitle}</a>
+            <a href="${headerValues.loginPageUrl}">${headerValues.loginPageTitle}</a>
+        </div>
+    </div>
+</div>
